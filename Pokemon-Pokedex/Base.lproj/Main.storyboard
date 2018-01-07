@@ -9,11 +9,16 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="PokemonSolid.ttf">
+            <string>PokemonSolidNormal</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Deck ScreenVC-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="DeckScreenVC" customModule="your_Pokedex" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="DeckScreenVC" customModule="Pokemon_Pokedex" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -27,16 +32,47 @@
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OAB-dF-MIn">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="65"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PoKeDexx..!!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6SU-E9-fgs">
+                                        <rect key="frame" x="68" y="29" width="184" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="184" id="GfR-op-Gox"/>
+                                            <constraint firstAttribute="height" constant="30" id="PSK-q7-TB0"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="PokemonSolidNormal" family="Pokemon Solid" pointSize="26"/>
+                                        <color key="textColor" red="1" green="0.98884107330000004" blue="0.21469893430000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                        <color key="shadowColor" red="0.18039215689999999" green="0.27058823529999998" blue="0.52549019610000003" alpha="1" colorSpace="calibratedRGB"/>
+                                        <size key="shadowOffset" width="3" height="2"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ePv-oy-Kvn">
+                                        <rect key="frame" x="282" y="29" width="30" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="Pcz-cg-pKV"/>
+                                            <constraint firstAttribute="width" constant="30" id="h2s-FB-O7z"/>
+                                        </constraints>
+                                        <state key="normal" title="Button" image="music"/>
+                                        <connections>
+                                            <action selector="musicButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wQi-C7-tuk"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
                                 <color key="backgroundColor" red="1" green="0.34509803921568627" blue="0.33333333333333331" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="ePv-oy-Kvn" secondAttribute="bottom" constant="6" id="2vf-kA-yyG"/>
+                                    <constraint firstAttribute="trailing" secondItem="ePv-oy-Kvn" secondAttribute="trailing" constant="8" id="VHe-3p-pKg"/>
+                                    <constraint firstItem="6SU-E9-fgs" firstAttribute="centerX" secondItem="OAB-dF-MIn" secondAttribute="centerX" id="Yxd-Nc-zNy"/>
+                                    <constraint firstAttribute="bottom" secondItem="6SU-E9-fgs" secondAttribute="bottom" constant="6" id="fD6-cp-3BW"/>
                                     <constraint firstAttribute="height" constant="65" id="iwn-ag-fQg"/>
+                                    <constraint firstItem="6SU-E9-fgs" firstAttribute="top" secondItem="OAB-dF-MIn" secondAttribute="top" constant="29" id="pM5-5D-Ve4"/>
                                 </constraints>
                             </view>
-                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="Hpr-eh-QAX">
+                            <searchBar contentMode="redraw" placeholder="Search a Pokemon.." translatesAutoresizingMaskIntoConstraints="NO" id="Hpr-eh-QAX">
                                 <rect key="frame" x="0.0" y="65" width="320" height="45"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="ivR-VW-UGS"/>
                                 </constraints>
+                                <color key="barTintColor" red="0.63921568627450975" green="0.88627450980392153" blue="0.33333333333333331" alpha="1" colorSpace="calibratedRGB"/>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="aYz-K4-BaQ">
@@ -49,7 +85,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="pokeCell" id="aIC-P6-FaH" customClass="PokeCell" customModule="your_Pokedex" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="pokeCell" id="aIC-P6-FaH" customClass="PokeCell" customModule="Pokemon_Pokedex" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="105" height="105"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -112,6 +148,7 @@
                     </view>
                     <connections>
                         <outlet property="collection" destination="aYz-K4-BaQ" id="2a8-to-ylU"/>
+                        <outlet property="pokemonSerachBar" destination="Hpr-eh-QAX" id="pZw-Og-VCs"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -122,5 +159,6 @@
     <resources>
         <image name="4" width="120" height="120"/>
         <image name="bg" width="1920" height="1200"/>
+        <image name="music" width="100" height="100"/>
     </resources>
 </document>
